@@ -1,0 +1,13 @@
+.container {
+    width: 460px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 10px 5px 5px #ccc;
+    border: solid 1px #eee;
+    background-color: #fdfdfd;
+    border-top-left-radius: 45px;
+}
+
+.chat {
+    min-height: 50px;
+}
