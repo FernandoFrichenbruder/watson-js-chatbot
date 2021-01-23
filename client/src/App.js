@@ -7,12 +7,12 @@ import { createSession } from "./actions/watson";
 import axios from "axios";
 
 if (localStorage.session) {
+  const session = localStorage.session;
+  localStorage.clear();
   delete axios.defaults.headers.common["session_id"];
-  axios.defaults.headers.common["session_id"] = localStorage.session;
+  axios.defaults.headers.common["session_id"] = session;
 } else {
   delete axios.defaults.headers.common["session_id"];
-  localStorage.clear();
-
 }
 
 const App = () => {
