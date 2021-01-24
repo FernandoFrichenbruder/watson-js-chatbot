@@ -1,8 +1,7 @@
-import { getAllByTestId, render, screen, fireEvent, waitFor } from '@testing-library/react';
-import App from '../App';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 import axios from 'axios';
-import SendMessage from '../components/UI/molecules/SendMessage';
-import Message from '../components/UI/molecules/Message';
+import Message from './components/UI/molecules/Message';
 
 describe('fetchData', () => {
 
