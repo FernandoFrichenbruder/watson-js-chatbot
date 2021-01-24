@@ -9,6 +9,10 @@ const watsonRoutes = require("./routes/api/watson");
 app.use("/api/watson", watsonRoutes);
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+var server = app.listen(port, () => {
     console.log("Server listening on port ", port);
+    return true;
 });
+
+
+module.exports = server
