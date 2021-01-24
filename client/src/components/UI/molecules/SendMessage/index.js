@@ -5,9 +5,6 @@ import { userMessage, sendMessage } from "../../../../actions/watson";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import DirectionsIcon from '@material-ui/icons/Directions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,14 +56,8 @@ const classes = useStyles();
         onChange={(e) => setMessage(e.target.value)}
         onKeyPress={handleClick}
         value={message}
+        data-testid="input"
       />
-      <Divider className={classes.divider} orientation="vertical" />
-      <IconButton color="primary" className={classes.iconButton} aria-label="directions"  id="chatInput"
-        onChange={(e) => setMessage(e.target.value)}
-        onClick={handleClick}
-        value={message}>
-        <DirectionsIcon className={classes.sendButton} />
-      </IconButton>
     </Paper>
   );
 

@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
 const Dialog = ({ chat }) => {
     const classes = useStyles();
 
-    console.log(chat)
+    //Fix to Jest use Ref
+    if (!HTMLElement.prototype.scrollIntoView) {
+        HTMLElement.prototype.scrollIntoView = () => {}
+    }
 
     const endOfMessages = useRef(null);
 
@@ -33,18 +36,18 @@ const Dialog = ({ chat }) => {
     useEffect(scrollToBottom, [chat]);
 
     return (
-        <div className={classes.root}>
-        <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-        >
-            {chat.length === 0
-                ? ""
-                : chat.map((msg) => <Message text={msg.message} type={msg.type} />)}
-            <div ref={endOfMessages}></div>
-        </Box>
+        <div className={classes.root} data-testid="dialog">
+            <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+            >
+                {chat.length === 0
+                    ? ""
+                    : chat.map((msg) => <Message text={msg.message} type={msg.type} />)}
+                <div ref={endOfMessages}></div>
+            </Box>
         </div>
     );
 };

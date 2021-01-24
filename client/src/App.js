@@ -12,6 +12,7 @@ if (localStorage.session) {
   delete axios.defaults.headers.common["session_id"];
   axios.defaults.headers.common["session_id"] = session;
 } else {
+  localStorage.clear();
   delete axios.defaults.headers.common["session_id"];
 }
 

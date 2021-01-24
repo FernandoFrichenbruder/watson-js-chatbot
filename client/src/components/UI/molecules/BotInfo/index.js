@@ -35,7 +35,7 @@ export default function BotInfo() {
                     Bot Name
                 </Box>
             </Typography>
-            <Typography variant="subtitle1" className={classes.colorContrast} gutterBottom lineHeight="normal" mb={0}>{message}</Typography>
+            <Typography variant="subtitle1" className={classes.colorContrast} gutterBottom mb={0}>{message}</Typography>
           </Grid>
         </Grid>
     </div>

@@ -4,22 +4,21 @@ import { Box, Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: 10,
-    borderRadius: 5,
-  },
-
   user: {
     backgroundColor: '#8EEAC0',
     alignSelf: 'flex-end',
     marginBottom: 20,
     borderTopRightRadius: 0,
+    padding: 10,
+    borderRadius: 5,
   },
 
   bot: {
     backgroundColor: '#ddd',
     marginBottom: 20,
     borderTopLeftRadius: 0,
+    padding: 10,
+    borderRadius: 5,
   },
 
 }));
@@ -29,7 +28,7 @@ export default function Message(props) {
 
   return (
 
-    <Box className={[classes.root, props.type == 'user' ? classes.user : classes.bot]}>
+    <Box className={props.type == 'user' ? classes.user : classes.bot}>
       <Typography>{props.text}</Typography>
     </Box>
 

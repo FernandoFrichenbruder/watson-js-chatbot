@@ -26,7 +26,7 @@ export default function BotAvatar() {
 
   return (
     <div className={classes.root}>
-      <Avatar src={botImg} className={[classes.purple, classes.large]} />
+      <Avatar src={botImg} className={classes.purple, classes.large} />
     </div>
   );
 }
