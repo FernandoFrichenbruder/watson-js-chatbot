@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 import axios from 'axios';
-import Message from './components/UI/molecules/Message';
+import Message from '../components/UI/molecules/Message';
 
 describe('fetchData', () => {
 
